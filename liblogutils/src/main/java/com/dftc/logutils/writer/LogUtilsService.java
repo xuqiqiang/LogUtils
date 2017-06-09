@@ -1,4 +1,4 @@
-package com.dftc.logutils;
+package com.dftc.logutils.writer;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
@@ -11,6 +11,10 @@ import android.os.SystemClock;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.util.Log;
+
+import com.dftc.logutils.LogInterface;
+import com.dftc.logutils.utils.FormatDate;
+import com.dftc.logutils.utils.Utils;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -28,6 +32,16 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
+ * If you want to enable writing, you need to add the following code in manifest:<p>
+ * &lt;service<p>
+ * android:name="com.dftc.logutils.writer.LogUtilsService"<p>
+ * android:exported="true"<p>
+ * android:process="com.dftc.service.logrecorder"&gt;<p>
+ * &lt;intent-filter&gt;<p>
+ * &lt;action android:name="com.dftc.service.logrecorder.LogUtilsService" /&gt;<p>
+ * &lt;/intent-filter&gt;<p>
+ * &lt;/service&gt;
+ * <p>
  * Created by xuqiqiang on 2017/6/2.
  */
 public class LogUtilsService extends Service {
@@ -36,10 +50,11 @@ public class LogUtilsService extends Service {
     private static final Map<String, String> mLogMap = Collections
             .synchronizedMap(new HashMap<String, String>());
 
-    private static final long WRITE_DELAY = 1000;
+    private static final long WRITE_DELAY = 5000;
     private static final long MAX_FILE_SIZE = 1024 * 1024;
     private static final int MAX_FILE_SUM = 20;
     private static final int MAX_FILE_SUM_CACHE = 10;
+    private static final float MAX_CPU_RATE = 60.0f;
 
     private static final ExecutorService mExecutorService = Executors
             .newSingleThreadExecutor();
@@ -51,7 +66,7 @@ public class LogUtilsService extends Service {
                 return;
             }
 
-            synchronized (dirPath) {
+            synchronized (mLogMap) {
                 String mMessage = mLogMap.get(dirPath);
                 if (TextUtils.isEmpty(mMessage)) {
                     mMessage = message;
@@ -72,7 +87,7 @@ public class LogUtilsService extends Service {
             }
         }
 
-        String date = LogUtils.FormatDate.getFormatDate();
+        String date = FormatDate.getFormatDate();
         int fileIndex = 1;
         File file;
         do {
@@ -145,7 +160,7 @@ public class LogUtilsService extends Service {
     }
 
     public static List<File> getYesterdayFileList(String dirPath) {
-        return getFileList(dirPath, LogUtils.FormatDate.getYesterdayFormatDate());
+        return getFileList(dirPath, FormatDate.getYesterdayFormatDate());
     }
 
     /**
@@ -206,6 +221,7 @@ public class LogUtilsService extends Service {
      *
      * @return {@link File} 返回一个正确编号的文件.
      */
+    @Nullable
     private static File handleOutdatedFiles(File dir) {
         File[] files = dir.listFiles();
         if (files != null && files.length > MAX_FILE_SUM + MAX_FILE_SUM_CACHE) {
@@ -226,7 +242,7 @@ public class LogUtilsService extends Service {
                 }
             });
             int deleteSum = files.length - MAX_FILE_SUM;
-            String today = LogUtils.FormatDate.getFormatDate();
+            String today = FormatDate.getFormatDate();
             int todayIndex = 0;
             int i = 0;
             do {
@@ -241,6 +257,14 @@ public class LogUtilsService extends Service {
                         today + "-" + fixFileList(dir, today, todayIndex) + ".log");
         }
         return null;
+    }
+
+    private void log(String dirPath, String message) {
+        try {
+            mBinder.log(dirPath, message);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
     }
 
     public void onCreate() {
@@ -271,12 +295,23 @@ public class LogUtilsService extends Service {
             mExecutorService.execute(new Thread() {
                 @Override
                 public void run() {
+
                     String dirPath = (String) entry.getKey();
                     Log.d(TAG, "startWriteThread dirPath : " + dirPath);
                     if (TextUtils.isEmpty(dirPath))
                         return;
+
+                    float cpuRate = Utils.getCpuRate();
+                    log(dirPath, "Current cpu rate : "
+                            + String.format("%.2f", cpuRate)
+                            + "%\r\n");
+                    if (cpuRate > MAX_CPU_RATE) {
+                        log(dirPath, "Current cpu rate is too high!\n");
+                        return;
+                    }
+
                     String message;
-                    synchronized (dirPath) {
+                    synchronized (mLogMap) {
                         message = (String) entry.getValue();
                         if (TextUtils.isEmpty(message))
                             return;

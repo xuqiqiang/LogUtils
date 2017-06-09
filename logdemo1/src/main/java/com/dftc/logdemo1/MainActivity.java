@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.dftc.logutils.LogUtils;
+import com.dftc.logutils.config.LogConfig;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -22,6 +23,9 @@ import java.util.Map;
  * Created by xuqiqiang on 2017/6/2.
  */
 public class MainActivity extends AppCompatActivity {
+
+    private static final String TAG = MainActivity.class.getSimpleName();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +44,22 @@ public class MainActivity extends AppCompatActivity {
 
         String dirPath = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator
                 + "log1";
-        LogUtils.register(this, dirPath, BuildConfig.DEBUG);
+
+        LogUtils.initialize(LogConfig.newBuilder()
+                .debug(BuildConfig.DEBUG)
+                .enableWrite(this, dirPath)
+                .reportCrash(true)
+                .build());
+
+        // Cause crash
+//        new Handler().postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                String str = null;
+//                str.length();
+//            }
+//        }, 30000l);
+
     }
 
     private void testLog() {
@@ -49,18 +68,35 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 while (true) {
 
-                    LogUtils.json("test", "{\"firstName\": \"Brett\", \"lastName\": \"McLaughlin\"}");
-                    LogUtils.xml("test",
+                    LogUtils.S.d("name:%s, version:%.1f", "LogUtils", 1.0f);
+
+                    LogUtils.json(TAG, "{\"firstName\": \"Brett\", \"lastName\": \"McLaughlin\"}");
+                    LogUtils.xml(TAG,
                             "<?xml version=\"1.0\" encoding=\"UTF-8\"?><note><to>Tove</to><from>Jani</from><heading>Reminder</heading><body>Don't forget me this weekend!</body></note>");
 
-                    LogUtils.object("MainActivity", new String[]{"abc", "123"});
+                    LogUtils.S.d("123\n45678980");
 
-                    LogUtils.object("MainActivity", new String[][]{
+                    try {
+                        "test".charAt(100);
+                    } catch (Exception e) {
+                        LogUtils.e(e, "Test Exception");
+                    }
+
+                    LogUtils.object(new String[]{"abc", "123"});
+
+                    LogUtils.object(new int[]{123, 456});
+
+                    LogUtils.object(new String[][]{
                             {"abc", "123"},
                             {"def", "456"}
                     });
 
-                    LogUtils.object("MainActivity", new String[][][]{
+                    LogUtils.object(new int[][]{
+                            {123, 456},
+                            {789, 123}
+                    });
+
+                    LogUtils.object(new String[][][]{
                             {{"abc", "123"}, {"def", "456"}},
                             {{"qwe", "123"}, {"zxc", "456"}}
                     });
@@ -68,39 +104,53 @@ public class MainActivity extends AppCompatActivity {
                     List<String> list = new ArrayList<>();
                     list.add("list1");
                     list.add("list2");
-                    LogUtils.object("MainActivity", list);
+                    LogUtils.S.object(list);
 
                     Map map = new HashMap();
                     map.put("key1", "value1");
                     map.put("key2", "value2");
-                    LogUtils.object("MainActivity", map);
+                    LogUtils.object(map);
 
                     Shoes[] shoes = new Shoes[]{
                             new Shoes("A", "red"),
                             new Shoes("B", "blue"),
                     };
-                    LogUtils.object("MainActivity", shoes);
+                    LogUtils.S.object(shoes);
 
                     List<Shoes> shoesList = new ArrayList<>();
                     Collections.addAll(shoesList, shoes);
-                    LogUtils.object("MainActivity", shoesList);
+                    LogUtils.object(shoesList);
 
                     Map shoesMap = new HashMap();
                     shoesMap.put("shoes1", shoes[0]);
                     shoesMap.put("shoes2", shoes[1]);
-                    LogUtils.object("MainActivity", shoesMap);
+                    LogUtils.object(shoesMap);
 
                     Map shoesMap1 = new HashMap();
                     shoesMap1.put(shoes[0], shoes[1]);
-                    LogUtils.object("MainActivity", shoesMap1);
+                    LogUtils.object(shoesMap1);
 
-                    LogUtils.object("MainActivity", new Person("Harry", "male"));
+                    LogUtils.S.object(new Person("Harry", "male"));
+
+                    LogUtils.S.cpuRate();
 
                     try {
                         Thread.sleep(5000);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
+                }
+            }
+        }).start();
+    }
+
+    private void testCpu() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (true) {
+                    String str = "fdffdsgsfsdafwertdrghyyetywgsggsdgsgasdfsrgsadgfrsdg";
+                    str.indexOf("asd");
                 }
             }
         }).start();

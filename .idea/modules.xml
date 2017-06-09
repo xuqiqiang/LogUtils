@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/LogDemo.iml" filepath="$PROJECT_DIR$/LogDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LogUtils.iml" filepath="$PROJECT_DIR$/LogUtils.iml" />
       <module fileurl="file://$PROJECT_DIR$/liblogutils/liblogutils.iml" filepath="$PROJECT_DIR$/liblogutils/liblogutils.iml" />
       <module fileurl="file://$PROJECT_DIR$/logdemo1/logdemo1.iml" filepath="$PROJECT_DIR$/logdemo1/logdemo1.iml" />
       <module fileurl="file://$PROJECT_DIR$/logdemo2/logdemo2.iml" filepath="$PROJECT_DIR$/logdemo2/logdemo2.iml" />

@@ -24,11 +24,11 @@
         </activity>
 
         <service
-            android:name="com.dftc.logutils.LogUtilsService"
+            android:name="com.dftc.logutils.writer.LogUtilsService"
             android:exported="true"
-            android:process="com.dftc.service.logrecord">
+            android:process="com.dftc.service.logrecorder">
             <intent-filter>
-                <action android:name="com.dftc.service.logrecord.LogUtilsService" />
+                <action android:name="com.dftc.service.logrecorder.LogUtilsService" />
             </intent-filter>
         </service>
     </application>

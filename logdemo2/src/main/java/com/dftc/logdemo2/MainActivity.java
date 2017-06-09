@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.dftc.logutils.LogUtils;
+import com.dftc.logutils.config.LogConfig;
 import com.dftc.logutils.utils.ObjParser;
 
 import java.io.File;
@@ -41,7 +42,11 @@ public class MainActivity extends AppCompatActivity {
 
         String dirPath = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator
                 + "log2";
-        LogUtils.register(this, dirPath, BuildConfig.DEBUG);
+        LogUtils.initialize(LogConfig.newBuilder()
+                .debug(BuildConfig.DEBUG)
+                .enableWrite(this, dirPath)
+                .reportCrash(true)
+                .build());
     }
 
     private void testLog() {

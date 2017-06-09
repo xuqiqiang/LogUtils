@@ -5,6 +5,7 @@ import android.text.TextUtils;
 import android.util.Pair;
 
 import java.lang.reflect.Field;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Locale;
@@ -59,7 +60,8 @@ public class ObjParser {
                 msg.append(pair1.second).append(getIndent(level - 1)).append("]");
                 break;
             default:
-                msg = new StringBuilder("{ Temporarily not support more than two dimensional Array! }");
+                msg = new StringBuilder(Arrays.deepToString((Object[]) object));
+                // msg = new StringBuilder("{ Temporarily not support more than two dimensional Array! }");
                 break;
         }
         return msg.toString();
