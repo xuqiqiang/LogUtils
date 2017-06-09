@@ -1,0 +1,1004 @@
+Current cpu rate : 84.24%
+Current cpu rate is too high!
+Current cpu rate : 4.04%
+2017-06-09 11:36:27.214 D/LogUtils(MainActivity.java:72) : name:LogUtils, version:1.0
+2017-06-09 11:36:27.343 D/MainActivity(MainActivity.java:74) : {
+    "firstName": "Brett",
+    "lastName": "McLaughlin"
+}
+2017-06-09 11:36:28.235 D/MainActivity(MainActivity.java:75) : <?xml version="1.0" encoding="UTF-8"?>
+<note>
+    <to>Tove</to>
+    <from>Jani</from>
+    <heading>Reminder</heading>
+    <body>Don't forget me this weekend!</body>
+</note>
+
+2017-06-09 11:36:28.242 D/LogUtils(MainActivity.java:78) : 123
+45678980
+2017-06-09 11:36:28.251 E/LogUtils(MainActivity.java:83) : Test Exception : java.lang.StringIndexOutOfBoundsException: length=4; index=100
+	at com.dftc.logdemo1.MainActivity$3.run(MainActivity.java:81)
+	at java.lang.Thread.run(Thread.java:841)
+
+2017-06-09 11:36:28.258 D/LogUtils(MainActivity.java:86) : String[2] : [abc, 123]
+2017-06-09 11:36:28.267 D/LogUtils(MainActivity.java:88) : int[2] : [123, 456]
+2017-06-09 11:36:28.276 D/LogUtils(MainActivity.java:90) : String[2][2] : [
+    [abc, 123]
+    [def, 456]
+]
+2017-06-09 11:36:28.286 D/LogUtils(MainActivity.java:95) : int[2][2] : [
+    [123, 456]
+    [789, 123]
+]
+2017-06-09 11:36:28.297 D/LogUtils(MainActivity.java:100) : [[[abc, 123], [def, 456]], [[qwe, 123], [zxc, 456]]]
+2017-06-09 11:36:28.394 D/LogUtils(MainActivity.java:108) : ArrayList {size = 2} [
+    [0] : list1,
+    [1] : list2
+]
+2017-06-09 11:36:28.402 D/LogUtils(MainActivity.java:113) : HashMap {size = 2} [
+    [key2] -> value2,
+    [key1] -> value1
+]
+2017-06-09 11:36:28.415 D/LogUtils(MainActivity.java:119) : Shoes[2] : [
+    Shoes {
+        color = red,
+        name = A
+    },
+    Shoes {
+        color = blue,
+        name = B
+    }
+]
+2017-06-09 11:36:28.428 D/LogUtils(MainActivity.java:123) : ArrayList {size = 2} [
+    [0] : Shoes {
+        color = red,
+        name = A
+    },
+    [1] : Shoes {
+        color = blue,
+        name = B
+    }
+]
+2017-06-09 11:36:28.447 D/LogUtils(MainActivity.java:128) : HashMap {size = 2} [
+    [shoes2] -> Shoes {
+        color = blue,
+        name = B
+    },
+    [shoes1] -> Shoes {
+        color = red,
+        name = A
+    }
+]
+2017-06-09 11:36:28.467 D/LogUtils(MainActivity.java:132) : HashMap {size = 1} [
+    [Shoes {
+        color = red,
+        name = A
+    }] -> Shoes {
+        color = blue,
+        name = B
+    }
+]
+2017-06-09 11:36:28.507 D/LogUtils(MainActivity.java:134) : Person {
+    array1 = String[2] : [abc, 123],
+    array2 = String[2][2] : [
+        [abc, 123]
+        [def, 456]
+    ],
+    array3 = [[[abc, 123], [def, 456]], [[qwe, 123], [zxc, 456]]],
+    array4 = null,
+    clothes = Clothes {
+        array1 = String[2] : [abc, 123],
+        color = white,
+        name = T-shirt
+    },
+    list = ArrayList {size = 2} [
+        [0] : list1,
+        [1] : list2
+    ],
+    map = HashMap {size = 2} [
+        [key2] -> value2,
+        [key1] -> value1
+    ],
+    name = Harry,
+    sex = male,
+    shoes = Shoes[2] : [
+        Shoes {
+            color = red,
+            name = A
+        },
+        Shoes {
+            color = blue,
+            name = B
+        }
+    ],
+    age = 25
+}
+2017-06-09 11:36:28.978 I/LogUtils(MainActivity.java:136) : Current process(21539) use cpu : 15.38%
+Current cpu rate : 24.06%
+2017-06-09 11:36:33.520 D/LogUtils(MainActivity.java:72) : name:LogUtils, version:1.0
+2017-06-09 11:36:33.532 D/MainActivity(MainActivity.java:74) : {
+    "firstName": "Brett",
+    "lastName": "McLaughlin"
+}
+2017-06-09 11:36:33.581 D/MainActivity(MainActivity.java:75) : <?xml version="1.0" encoding="UTF-8"?>
+<note>
+    <to>Tove</to>
+    <from>Jani</from>
+    <heading>Reminder</heading>
+    <body>Don't forget me this weekend!</body>
+</note>
+
+2017-06-09 11:36:33.599 D/LogUtils(MainActivity.java:78) : 123
+45678980
+2017-06-09 11:36:33.617 E/LogUtils(MainActivity.java:83) : Test Exception : java.lang.StringIndexOutOfBoundsException: length=4; index=100
+	at com.dftc.logdemo1.MainActivity$3.run(MainActivity.java:81)
+	at java.lang.Thread.run(Thread.java:841)
+
+2017-06-09 11:36:33.632 D/LogUtils(MainActivity.java:86) : String[2] : [abc, 123]
+2017-06-09 11:36:33.639 D/LogUtils(MainActivity.java:88) : int[2] : [123, 456]
+2017-06-09 11:36:33.658 D/LogUtils(MainActivity.java:90) : String[2][2] : [
+    [abc, 123]
+    [def, 456]
+]
+2017-06-09 11:36:33.680 D/LogUtils(MainActivity.java:95) : int[2][2] : [
+    [123, 456]
+    [789, 123]
+]
+2017-06-09 11:36:33.696 D/LogUtils(MainActivity.java:100) : [[[abc, 123], [def, 456]], [[qwe, 123], [zxc, 456]]]
+2017-06-09 11:36:33.714 D/LogUtils(MainActivity.java:108) : ArrayList {size = 2} [
+    [0] : list1,
+    [1] : list2
+]
+2017-06-09 11:36:33.725 D/LogUtils(MainActivity.java:113) : HashMap {size = 2} [
+    [key2] -> value2,
+    [key1] -> value1
+]
+2017-06-09 11:36:33.750 D/LogUtils(MainActivity.java:119) : Shoes[2] : [
+    Shoes {
+        color = red,
+        name = A
+    },
+    Shoes {
+        color = blue,
+        name = B
+    }
+]
+2017-06-09 11:36:33.872 D/LogUtils(MainActivity.java:123) : ArrayList {size = 2} [
+    [0] : Shoes {
+        color = red,
+        name = A
+    },
+    [1] : Shoes {
+        color = blue,
+        name = B
+    }
+]
+2017-06-09 11:36:33.892 D/LogUtils(MainActivity.java:128) : HashMap {size = 2} [
+    [shoes2] -> Shoes {
+        color = blue,
+        name = B
+    },
+    [shoes1] -> Shoes {
+        color = red,
+        name = A
+    }
+]
+2017-06-09 11:36:33.905 D/LogUtils(MainActivity.java:132) : HashMap {size = 1} [
+    [Shoes {
+        color = red,
+        name = A
+    }] -> Shoes {
+        color = blue,
+        name = B
+    }
+]
+2017-06-09 11:36:34.001 D/LogUtils(MainActivity.java:134) : Person {
+    array1 = String[2] : [abc, 123],
+    array2 = String[2][2] : [
+        [abc, 123]
+        [def, 456]
+    ],
+    array3 = [[[abc, 123], [def, 456]], [[qwe, 123], [zxc, 456]]],
+    array4 = null,
+    clothes = Clothes {
+        array1 = String[2] : [abc, 123],
+        color = white,
+        name = T-shirt
+    },
+    list = ArrayList {size = 2} [
+        [0] : list1,
+        [1] : list2
+    ],
+    map = HashMap {size = 2} [
+        [key2] -> value2,
+        [key1] -> value1
+    ],
+    name = Harry,
+    sex = male,
+    shoes = Shoes[2] : [
+        Shoes {
+            color = red,
+            name = A
+        },
+        Shoes {
+            color = blue,
+            name = B
+        }
+    ],
+    age = 25
+}
+2017-06-09 11:36:34.395 I/LogUtils(MainActivity.java:136) : Current process(21539) use cpu : 2.78%
+Current cpu rate : 27.90%
+2017-06-09 11:36:39.014 D/LogUtils(MainActivity.java:72) : name:LogUtils, version:1.0
+2017-06-09 11:36:39.022 D/MainActivity(MainActivity.java:74) : {
+    "firstName": "Brett",
+    "lastName": "McLaughlin"
+}
+2017-06-09 11:36:39.048 D/MainActivity(MainActivity.java:75) : <?xml version="1.0" encoding="UTF-8"?>
+<note>
+    <to>Tove</to>
+    <from>Jani</from>
+    <heading>Reminder</heading>
+    <body>Don't forget me this weekend!</body>
+</note>
+
+2017-06-09 11:36:39.061 D/LogUtils(MainActivity.java:78) : 123
+45678980
+2017-06-09 11:36:39.080 E/LogUtils(MainActivity.java:83) : Test Exception : java.lang.StringIndexOutOfBoundsException: length=4; index=100
+	at com.dftc.logdemo1.MainActivity$3.run(MainActivity.java:81)
+	at java.lang.Thread.run(Thread.java:841)
+
+2017-06-09 11:36:39.084 D/LogUtils(MainActivity.java:86) : String[2] : [abc, 123]
+2017-06-09 11:36:39.101 D/LogUtils(MainActivity.java:88) : int[2] : [123, 456]
+2017-06-09 11:36:39.105 D/LogUtils(MainActivity.java:90) : String[2][2] : [
+    [abc, 123]
+    [def, 456]
+]
+2017-06-09 11:36:39.113 D/LogUtils(MainActivity.java:95) : int[2][2] : [
+    [123, 456]
+    [789, 123]
+]
+2017-06-09 11:36:39.132 D/LogUtils(MainActivity.java:100) : [[[abc, 123], [def, 456]], [[qwe, 123], [zxc, 456]]]
+2017-06-09 11:36:39.139 D/LogUtils(MainActivity.java:108) : ArrayList {size = 2} [
+    [0] : list1,
+    [1] : list2
+]
+2017-06-09 11:36:39.161 D/LogUtils(MainActivity.java:113) : HashMap {size = 2} [
+    [key2] -> value2,
+    [key1] -> value1
+]
+2017-06-09 11:36:39.174 D/LogUtils(MainActivity.java:119) : Shoes[2] : [
+    Shoes {
+        color = red,
+        name = A
+    },
+    Shoes {
+        color = blue,
+        name = B
+    }
+]
+2017-06-09 11:36:39.184 D/LogUtils(MainActivity.java:123) : ArrayList {size = 2} [
+    [0] : Shoes {
+        color = red,
+        name = A
+    },
+    [1] : Shoes {
+        color = blue,
+        name = B
+    }
+]
+2017-06-09 11:36:39.195 D/LogUtils(MainActivity.java:128) : HashMap {size = 2} [
+    [shoes2] -> Shoes {
+        color = blue,
+        name = B
+    },
+    [shoes1] -> Shoes {
+        color = red,
+        name = A
+    }
+]
+2017-06-09 11:36:39.206 D/LogUtils(MainActivity.java:132) : HashMap {size = 1} [
+    [Shoes {
+        color = red,
+        name = A
+    }] -> Shoes {
+        color = blue,
+        name = B
+    }
+]
+2017-06-09 11:36:39.248 D/LogUtils(MainActivity.java:134) : Person {
+    array1 = String[2] : [abc, 123],
+    array2 = String[2][2] : [
+        [abc, 123]
+        [def, 456]
+    ],
+    array3 = [[[abc, 123], [def, 456]], [[qwe, 123], [zxc, 456]]],
+    array4 = null,
+    clothes = Clothes {
+        array1 = String[2] : [abc, 123],
+        color = white,
+        name = T-shirt
+    },
+    list = ArrayList {size = 2} [
+        [0] : list1,
+        [1] : list2
+    ],
+    map = HashMap {size = 2} [
+        [key2] -> value2,
+        [key1] -> value1
+    ],
+    name = Harry,
+    sex = male,
+    shoes = Shoes[2] : [
+        Shoes {
+            color = red,
+            name = A
+        },
+        Shoes {
+            color = blue,
+            name = B
+        }
+    ],
+    age = 25
+}
+2017-06-09 11:36:39.642 I/LogUtils(MainActivity.java:136) : Current process(21539) use cpu : 2.78%
+Current cpu rate : 34.38%
+2017-06-09 11:36:44.268 D/LogUtils(MainActivity.java:72) : name:LogUtils, version:1.0
+2017-06-09 11:36:44.322 D/MainActivity(MainActivity.java:74) : {
+    "firstName": "Brett",
+    "lastName": "McLaughlin"
+}
+2017-06-09 11:36:44.418 D/MainActivity(MainActivity.java:75) : <?xml version="1.0" encoding="UTF-8"?>
+<note>
+    <to>Tove</to>
+    <from>Jani</from>
+    <heading>Reminder</heading>
+    <body>Don't forget me this weekend!</body>
+</note>
+
+2017-06-09 11:36:44.453 D/LogUtils(MainActivity.java:78) : 123
+45678980
+2017-06-09 11:36:44.459 E/LogUtils(MainActivity.java:83) : Test Exception : java.lang.StringIndexOutOfBoundsException: length=4; index=100
+	at com.dftc.logdemo1.MainActivity$3.run(MainActivity.java:81)
+	at java.lang.Thread.run(Thread.java:841)
+
+2017-06-09 11:36:44.475 D/LogUtils(MainActivity.java:86) : String[2] : [abc, 123]
+2017-06-09 11:36:44.481 D/LogUtils(MainActivity.java:88) : int[2] : [123, 456]
+2017-06-09 11:36:44.492 D/LogUtils(MainActivity.java:90) : String[2][2] : [
+    [abc, 123]
+    [def, 456]
+]
+2017-06-09 11:36:44.502 D/LogUtils(MainActivity.java:95) : int[2][2] : [
+    [123, 456]
+    [789, 123]
+]
+2017-06-09 11:36:44.508 D/LogUtils(MainActivity.java:100) : [[[abc, 123], [def, 456]], [[qwe, 123], [zxc, 456]]]
+2017-06-09 11:36:44.515 D/LogUtils(MainActivity.java:108) : ArrayList {size = 2} [
+    [0] : list1,
+    [1] : list2
+]
+2017-06-09 11:36:44.523 D/LogUtils(MainActivity.java:113) : HashMap {size = 2} [
+    [key2] -> value2,
+    [key1] -> value1
+]
+2017-06-09 11:36:44.532 D/LogUtils(MainActivity.java:119) : Shoes[2] : [
+    Shoes {
+        color = red,
+        name = A
+    },
+    Shoes {
+        color = blue,
+        name = B
+    }
+]
+2017-06-09 11:36:44.543 D/LogUtils(MainActivity.java:123) : ArrayList {size = 2} [
+    [0] : Shoes {
+        color = red,
+        name = A
+    },
+    [1] : Shoes {
+        color = blue,
+        name = B
+    }
+]
+2017-06-09 11:36:44.554 D/LogUtils(MainActivity.java:128) : HashMap {size = 2} [
+    [shoes2] -> Shoes {
+        color = blue,
+        name = B
+    },
+    [shoes1] -> Shoes {
+        color = red,
+        name = A
+    }
+]
+2017-06-09 11:36:44.562 D/LogUtils(MainActivity.java:132) : HashMap {size = 1} [
+    [Shoes {
+        color = red,
+        name = A
+    }] -> Shoes {
+        color = blue,
+        name = B
+    }
+]
+2017-06-09 11:36:44.583 D/LogUtils(MainActivity.java:134) : Person {
+    array1 = String[2] : [abc, 123],
+    array2 = String[2][2] : [
+        [abc, 123]
+        [def, 456]
+    ],
+    array3 = [[[abc, 123], [def, 456]], [[qwe, 123], [zxc, 456]]],
+    array4 = null,
+    clothes = Clothes {
+        array1 = String[2] : [abc, 123],
+        color = white,
+        name = T-shirt
+    },
+    list = ArrayList {size = 2} [
+        [0] : list1,
+        [1] : list2
+    ],
+    map = HashMap {size = 2} [
+        [key2] -> value2,
+        [key1] -> value1
+    ],
+    name = Harry,
+    sex = male,
+    shoes = Shoes[2] : [
+        Shoes {
+            color = red,
+            name = A
+        },
+        Shoes {
+            color = blue,
+            name = B
+        }
+    ],
+    age = 25
+}
+2017-06-09 11:36:44.964 I/LogUtils(MainActivity.java:136) : Current process(21539) use cpu : 0.00%
+Current cpu rate : 31.88%
+2017-06-09 11:36:49.349 E/LogUtils(CrashHandler.java:51) : AndroidRuntime: Shutting down VM
+java.lang.NullPointerException
+	at com.dftc.logdemo1.MainActivity$2.run(MainActivity.java:60)
+	at android.os.Handler.handleCallback(Handler.java:733)
+	at android.os.Handler.dispatchMessage(Handler.java:95)
+	at android.os.Looper.loop(Looper.java:136)
+	at android.app.ActivityThread.main(ActivityThread.java:5017)
+	at java.lang.reflect.Method.invokeNative(Native Method)
+	at java.lang.reflect.Method.invoke(Method.java:515)
+	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:779)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:595)
+	at dalvik.system.NativeStart.main(Native Method)
+
+2017-06-09 11:36:49.604 D/LogUtils(MainActivity.java:72) : name:LogUtils, version:1.0
+2017-06-09 11:36:49.614 D/MainActivity(MainActivity.java:74) : {
+    "firstName": "Brett",
+    "lastName": "McLaughlin"
+}
+2017-06-09 11:36:49.689 D/MainActivity(MainActivity.java:75) : <?xml version="1.0" encoding="UTF-8"?>
+<note>
+    <to>Tove</to>
+    <from>Jani</from>
+    <heading>Reminder</heading>
+    <body>Don't forget me this weekend!</body>
+</note>
+
+2017-06-09 11:36:49.710 D/LogUtils(MainActivity.java:78) : 123
+45678980
+2017-06-09 11:36:49.731 E/LogUtils(MainActivity.java:83) : Test Exception : java.lang.StringIndexOutOfBoundsException: length=4; index=100
+	at com.dftc.logdemo1.MainActivity$3.run(MainActivity.java:81)
+	at java.lang.Thread.run(Thread.java:841)
+
+2017-06-09 11:36:49.779 D/LogUtils(MainActivity.java:86) : String[2] : [abc, 123]
+2017-06-09 11:36:49.802 D/LogUtils(MainActivity.java:88) : int[2] : [123, 456]
+2017-06-09 11:36:49.830 D/LogUtils(MainActivity.java:90) : String[2][2] : [
+    [abc, 123]
+    [def, 456]
+]
+2017-06-09 11:36:49.855 D/LogUtils(MainActivity.java:95) : int[2][2] : [
+    [123, 456]
+    [789, 123]
+]
+2017-06-09 11:36:49.887 D/LogUtils(MainActivity.java:100) : [[[abc, 123], [def, 456]], [[qwe, 123], [zxc, 456]]]
+2017-06-09 11:36:49.912 D/LogUtils(MainActivity.java:108) : ArrayList {size = 2} [
+    [0] : list1,
+    [1] : list2
+]
+2017-06-09 11:36:49.952 D/LogUtils(MainActivity.java:113) : HashMap {size = 2} [
+    [key2] -> value2,
+    [key1] -> value1
+]
+2017-06-09 11:36:50.003 D/LogUtils(MainActivity.java:119) : Shoes[2] : [
+    Shoes {
+        color = red,
+        name = A
+    },
+    Shoes {
+        color = blue,
+        name = B
+    }
+]
+2017-06-09 11:36:50.183 D/LogUtils(MainActivity.java:123) : ArrayList {size = 2} [
+    [0] : Shoes {
+        color = red,
+        name = A
+    },
+    [1] : Shoes {
+        color = blue,
+        name = B
+    }
+]
+2017-06-09 11:36:50.247 D/LogUtils(MainActivity.java:128) : HashMap {size = 2} [
+    [shoes2] -> Shoes {
+        color = blue,
+        name = B
+    },
+    [shoes1] -> Shoes {
+        color = red,
+        name = A
+    }
+]
+2017-06-09 11:36:50.358 D/LogUtils(MainActivity.java:132) : HashMap {size = 1} [
+    [Shoes {
+        color = red,
+        name = A
+    }] -> Shoes {
+        color = blue,
+        name = B
+    }
+]
+2017-06-09 11:36:50.524 D/LogUtils(MainActivity.java:134) : Person {
+    array1 = String[2] : [abc, 123],
+    array2 = String[2][2] : [
+        [abc, 123]
+        [def, 456]
+    ],
+    array3 = [[[abc, 123], [def, 456]], [[qwe, 123], [zxc, 456]]],
+    array4 = null,
+    clothes = Clothes {
+        array1 = String[2] : [abc, 123],
+        color = white,
+        name = T-shirt
+    },
+    list = ArrayList {size = 2} [
+        [0] : list1,
+        [1] : list2
+    ],
+    map = HashMap {size = 2} [
+        [key2] -> value2,
+        [key1] -> value1
+    ],
+    name = Harry,
+    sex = male,
+    shoes = Shoes[2] : [
+        Shoes {
+            color = red,
+            name = A
+        },
+        Shoes {
+            color = blue,
+            name = B
+        }
+    ],
+    age = 25
+}
+2017-06-09 11:36:51.020 I/LogUtils(MainActivity.java:136) : Current process(21539) use cpu : 0.00%
+Current cpu rate : 100.00%
+Current cpu rate is too high!
+2017-06-09 11:36:55.629 D/LogUtils(MainActivity.java:72) : name:LogUtils, version:1.0
+2017-06-09 11:36:55.715 D/MainActivity(MainActivity.java:74) : {
+    "firstName": "Brett",
+    "lastName": "McLaughlin"
+}
+2017-06-09 11:36:55.827 D/MainActivity(MainActivity.java:75) : <?xml version="1.0" encoding="UTF-8"?>
+<note>
+    <to>Tove</to>
+    <from>Jani</from>
+    <heading>Reminder</heading>
+    <body>Don't forget me this weekend!</body>
+</note>
+
+2017-06-09 11:36:55.907 D/LogUtils(MainActivity.java:78) : 123
+45678980
+2017-06-09 11:36:55.944 E/LogUtils(MainActivity.java:83) : Test Exception : java.lang.StringIndexOutOfBoundsException: length=4; index=100
+	at com.dftc.logdemo1.MainActivity$3.run(MainActivity.java:81)
+	at java.lang.Thread.run(Thread.java:841)
+
+2017-06-09 11:36:56.150 D/LogUtils(MainActivity.java:86) : String[2] : [abc, 123]
+2017-06-09 11:36:56.157 D/LogUtils(MainActivity.java:88) : int[2] : [123, 456]
+2017-06-09 11:36:56.161 D/LogUtils(MainActivity.java:90) : String[2][2] : [
+    [abc, 123]
+    [def, 456]
+]
+2017-06-09 11:36:56.167 D/LogUtils(MainActivity.java:95) : int[2][2] : [
+    [123, 456]
+    [789, 123]
+]
+2017-06-09 11:36:56.176 D/LogUtils(MainActivity.java:100) : [[[abc, 123], [def, 456]], [[qwe, 123], [zxc, 456]]]
+2017-06-09 11:36:56.279 D/LogUtils(MainActivity.java:108) : ArrayList {size = 2} [
+    [0] : list1,
+    [1] : list2
+]
+2017-06-09 11:36:56.336 D/LogUtils(MainActivity.java:113) : HashMap {size = 2} [
+    [key2] -> value2,
+    [key1] -> value1
+]
+2017-06-09 11:36:56.345 D/LogUtils(MainActivity.java:119) : Shoes[2] : [
+    Shoes {
+        color = red,
+        name = A
+    },
+    Shoes {
+        color = blue,
+        name = B
+    }
+]
+2017-06-09 11:36:56.383 D/LogUtils(MainActivity.java:123) : ArrayList {size = 2} [
+    [0] : Shoes {
+        color = red,
+        name = A
+    },
+    [1] : Shoes {
+        color = blue,
+        name = B
+    }
+]
+2017-06-09 11:36:56.481 D/LogUtils(MainActivity.java:128) : HashMap {size = 2} [
+    [shoes2] -> Shoes {
+        color = blue,
+        name = B
+    },
+    [shoes1] -> Shoes {
+        color = red,
+        name = A
+    }
+]
+2017-06-09 11:36:56.489 D/LogUtils(MainActivity.java:132) : HashMap {size = 1} [
+    [Shoes {
+        color = red,
+        name = A
+    }] -> Shoes {
+        color = blue,
+        name = B
+    }
+]
+2017-06-09 11:36:58.412 D/LogUtils(MainActivity.java:134) : Person {
+    array1 = String[2] : [abc, 123],
+    array2 = String[2][2] : [
+        [abc, 123]
+        [def, 456]
+    ],
+    array3 = [[[abc, 123], [def, 456]], [[qwe, 123], [zxc, 456]]],
+    array4 = null,
+    clothes = Clothes {
+        array1 = String[2] : [abc, 123],
+        color = white,
+        name = T-shirt
+    },
+    list = ArrayList {size = 2} [
+        [0] : list1,
+        [1] : list2
+    ],
+    map = HashMap {size = 2} [
+        [key2] -> value2,
+        [key1] -> value1
+    ],
+    name = Harry,
+    sex = male,
+    shoes = Shoes[2] : [
+        Shoes {
+            color = red,
+            name = A
+        },
+        Shoes {
+            color = blue,
+            name = B
+        }
+    ],
+    age = 25
+}
+2017-06-09 11:36:59.437 I/LogUtils(MainActivity.java:136) : Current process(21539) use cpu : 0.00%
+Current cpu rate : 100.00%
+Current cpu rate is too high!
+Current cpu rate : 39.82%
+2017-06-09 11:37:03.686 D/LogUtils(MainActivity.java:72) : name:LogUtils, version:1.0
+2017-06-09 11:37:03.694 D/MainActivity(MainActivity.java:74) : {
+    "firstName": "Brett",
+    "lastName": "McLaughlin"
+}
+2017-06-09 11:37:03.752 D/MainActivity(MainActivity.java:75) : <?xml version="1.0" encoding="UTF-8"?>
+<note>
+    <to>Tove</to>
+    <from>Jani</from>
+    <heading>Reminder</heading>
+    <body>Don't forget me this weekend!</body>
+</note>
+
+2017-06-09 11:37:03.759 D/LogUtils(MainActivity.java:78) : 123
+45678980
+2017-06-09 11:37:03.771 E/LogUtils(MainActivity.java:83) : Test Exception : java.lang.StringIndexOutOfBoundsException: length=4; index=100
+	at com.dftc.logdemo1.MainActivity$3.run(MainActivity.java:81)
+	at java.lang.Thread.run(Thread.java:841)
+
+2017-06-09 11:37:03.776 D/LogUtils(MainActivity.java:86) : String[2] : [abc, 123]
+2017-06-09 11:37:03.792 D/LogUtils(MainActivity.java:88) : int[2] : [123, 456]
+2017-06-09 11:37:03.814 D/LogUtils(MainActivity.java:90) : String[2][2] : [
+    [abc, 123]
+    [def, 456]
+]
+2017-06-09 11:37:03.822 D/LogUtils(MainActivity.java:95) : int[2][2] : [
+    [123, 456]
+    [789, 123]
+]
+2017-06-09 11:37:03.827 D/LogUtils(MainActivity.java:100) : [[[abc, 123], [def, 456]], [[qwe, 123], [zxc, 456]]]
+2017-06-09 11:37:03.838 D/LogUtils(MainActivity.java:108) : ArrayList {size = 2} [
+    [0] : list1,
+    [1] : list2
+]
+2017-06-09 11:37:03.857 D/LogUtils(MainActivity.java:113) : HashMap {size = 2} [
+    [key2] -> value2,
+    [key1] -> value1
+]
+2017-06-09 11:37:03.925 D/LogUtils(MainActivity.java:119) : Shoes[2] : [
+    Shoes {
+        color = red,
+        name = A
+    },
+    Shoes {
+        color = blue,
+        name = B
+    }
+]
+2017-06-09 11:37:03.933 D/LogUtils(MainActivity.java:123) : ArrayList {size = 2} [
+    [0] : Shoes {
+        color = red,
+        name = A
+    },
+    [1] : Shoes {
+        color = blue,
+        name = B
+    }
+]
+2017-06-09 11:37:03.954 D/LogUtils(MainActivity.java:128) : HashMap {size = 2} [
+    [shoes2] -> Shoes {
+        color = blue,
+        name = B
+    },
+    [shoes1] -> Shoes {
+        color = red,
+        name = A
+    }
+]
+2017-06-09 11:37:03.962 D/LogUtils(MainActivity.java:132) : HashMap {size = 1} [
+    [Shoes {
+        color = red,
+        name = A
+    }] -> Shoes {
+        color = blue,
+        name = B
+    }
+]
+2017-06-09 11:37:04.003 D/LogUtils(MainActivity.java:134) : Person {
+    array1 = String[2] : [abc, 123],
+    array2 = String[2][2] : [
+        [abc, 123]
+        [def, 456]
+    ],
+    array3 = [[[abc, 123], [def, 456]], [[qwe, 123], [zxc, 456]]],
+    array4 = null,
+    clothes = Clothes {
+        array1 = String[2] : [abc, 123],
+        color = white,
+        name = T-shirt
+    },
+    list = ArrayList {size = 2} [
+        [0] : list1,
+        [1] : list2
+    ],
+    map = HashMap {size = 2} [
+        [key2] -> value2,
+        [key1] -> value1
+    ],
+    name = Harry,
+    sex = male,
+    shoes = Shoes[2] : [
+        Shoes {
+            color = red,
+            name = A
+        },
+        Shoes {
+            color = blue,
+            name = B
+        }
+    ],
+    age = 25
+}
+2017-06-09 11:37:04.379 I/LogUtils(MainActivity.java:136) : Current process(21539) use cpu : 0.00%
+Current cpu rate : 38.24%
+2017-06-09 11:37:09.012 D/LogUtils(MainActivity.java:72) : name:LogUtils, version:1.0
+2017-06-09 11:37:09.020 D/MainActivity(MainActivity.java:74) : {
+    "firstName": "Brett",
+    "lastName": "McLaughlin"
+}
+2017-06-09 11:37:09.032 D/MainActivity(MainActivity.java:75) : <?xml version="1.0" encoding="UTF-8"?>
+<note>
+    <to>Tove</to>
+    <from>Jani</from>
+    <heading>Reminder</heading>
+    <body>Don't forget me this weekend!</body>
+</note>
+
+2017-06-09 11:37:09.041 D/LogUtils(MainActivity.java:78) : 123
+45678980
+2017-06-09 11:37:09.044 E/LogUtils(MainActivity.java:83) : Test Exception : java.lang.StringIndexOutOfBoundsException: length=4; index=100
+	at com.dftc.logdemo1.MainActivity$3.run(MainActivity.java:81)
+	at java.lang.Thread.run(Thread.java:841)
+
+2017-06-09 11:37:09.048 D/LogUtils(MainActivity.java:86) : String[2] : [abc, 123]
+2017-06-09 11:37:09.057 D/LogUtils(MainActivity.java:88) : int[2] : [123, 456]
+2017-06-09 11:37:09.074 D/LogUtils(MainActivity.java:90) : String[2][2] : [
+    [abc, 123]
+    [def, 456]
+]
+2017-06-09 11:37:09.084 D/LogUtils(MainActivity.java:95) : int[2][2] : [
+    [123, 456]
+    [789, 123]
+]
+2017-06-09 11:37:09.103 D/LogUtils(MainActivity.java:100) : [[[abc, 123], [def, 456]], [[qwe, 123], [zxc, 456]]]
+2017-06-09 11:37:09.120 D/LogUtils(MainActivity.java:108) : ArrayList {size = 2} [
+    [0] : list1,
+    [1] : list2
+]
+2017-06-09 11:37:09.130 D/LogUtils(MainActivity.java:113) : HashMap {size = 2} [
+    [key2] -> value2,
+    [key1] -> value1
+]
+2017-06-09 11:37:09.157 D/LogUtils(MainActivity.java:119) : Shoes[2] : [
+    Shoes {
+        color = red,
+        name = A
+    },
+    Shoes {
+        color = blue,
+        name = B
+    }
+]
+2017-06-09 11:37:09.181 D/LogUtils(MainActivity.java:123) : ArrayList {size = 2} [
+    [0] : Shoes {
+        color = red,
+        name = A
+    },
+    [1] : Shoes {
+        color = blue,
+        name = B
+    }
+]
+2017-06-09 11:37:09.204 D/LogUtils(MainActivity.java:128) : HashMap {size = 2} [
+    [shoes2] -> Shoes {
+        color = blue,
+        name = B
+    },
+    [shoes1] -> Shoes {
+        color = red,
+        name = A
+    }
+]
+2017-06-09 11:37:09.222 D/LogUtils(MainActivity.java:132) : HashMap {size = 1} [
+    [Shoes {
+        color = red,
+        name = A
+    }] -> Shoes {
+        color = blue,
+        name = B
+    }
+]
+2017-06-09 11:37:09.293 D/LogUtils(MainActivity.java:134) : Person {
+    array1 = String[2] : [abc, 123],
+    array2 = String[2][2] : [
+        [abc, 123]
+        [def, 456]
+    ],
+    array3 = [[[abc, 123], [def, 456]], [[qwe, 123], [zxc, 456]]],
+    array4 = null,
+    clothes = Clothes {
+        array1 = String[2] : [abc, 123],
+        color = white,
+        name = T-shirt
+    },
+    list = ArrayList {size = 2} [
+        [0] : list1,
+        [1] : list2
+    ],
+    map = HashMap {size = 2} [
+        [key2] -> value2,
+        [key1] -> value1
+    ],
+    name = Harry,
+    sex = male,
+    shoes = Shoes[2] : [
+        Shoes {
+            color = red,
+            name = A
+        },
+        Shoes {
+            color = blue,
+            name = B
+        }
+    ],
+    age = 25
+}
+2017-06-09 11:37:09.672 I/LogUtils(MainActivity.java:136) : Current process(21539) use cpu : 0.00%
+Current cpu rate : 34.17%
+2017-06-09 11:37:14.302 D/LogUtils(MainActivity.java:72) : name:LogUtils, version:1.0
+2017-06-09 11:37:14.309 D/MainActivity(MainActivity.java:74) : {
+    "firstName": "Brett",
+    "lastName": "McLaughlin"
+}
+2017-06-09 11:37:14.321 D/MainActivity(MainActivity.java:75) : <?xml version="1.0" encoding="UTF-8"?>
+<note>
+    <to>Tove</to>
+    <from>Jani</from>
+    <heading>Reminder</heading>
+    <body>Don't forget me this weekend!</body>
+</note>
+
+2017-06-09 11:37:14.326 D/LogUtils(MainActivity.java:78) : 123
+45678980
+2017-06-09 11:37:14.333 E/LogUtils(MainActivity.java:83) : Test Exception : java.lang.StringIndexOutOfBoundsException: length=4; index=100
+	at com.dftc.logdemo1.MainActivity$3.run(MainActivity.java:81)
+	at java.lang.Thread.run(Thread.java:841)
+
+2017-06-09 11:37:14.341 D/LogUtils(MainActivity.java:86) : String[2] : [abc, 123]
+2017-06-09 11:37:14.347 D/LogUtils(MainActivity.java:88) : int[2] : [123, 456]
+2017-06-09 11:37:14.356 D/LogUtils(MainActivity.java:90) : String[2][2] : [
+    [abc, 123]
+    [def, 456]
+]
+2017-06-09 11:37:14.363 D/LogUtils(MainActivity.java:95) : int[2][2] : [
+    [123, 456]
+    [789, 123]
+]
+2017-06-09 11:37:14.369 D/LogUtils(MainActivity.java:100) : [[[abc, 123], [def, 456]], [[qwe, 123], [zxc, 456]]]
+2017-06-09 11:37:14.377 D/LogUtils(MainActivity.java:108) : ArrayList {size = 2} [
+    [0] : list1,
+    [1] : list2
+]
+2017-06-09 11:37:14.386 D/LogUtils(MainActivity.java:113) : HashMap {size = 2} [
+    [key2] -> value2,
+    [key1] -> value1
+]
+2017-06-09 11:37:14.397 D/LogUtils(MainActivity.java:119) : Shoes[2] : [
+    Shoes {
+        color = red,
+        name = A
+    },
+    Shoes {
+        color = blue,
+        name = B
+    }
+]
+Current cpu rate : 5.94%
+Current cpu rate : 1.88%
+Current cpu rate : 0.31%
+Current cpu rate : 0.31%
+Current cpu rate : 0.62%
+Current cpu rate : 0.93%
+Current cpu rate : 0.93%
+Current cpu rate : 18.54%
+Current cpu rate : 0.62%
+Current cpu rate : 0.62%
+Current cpu rate : 1.90%
+Current cpu rate : 79.42%
+Current cpu rate is too high!
+Current cpu rate : 12.77%
+Current cpu rate : 0.94%
+Current cpu rate : 13.31%
+Current cpu rate : 36.14%
+Current cpu rate : 41.98%
+Current cpu rate : 55.86%
+Current cpu rate : 100.00%
+Current cpu rate is too high!
+Current cpu rate : 100.00%
+Current cpu rate is too high!
+Current cpu rate : 42.99%
+Current cpu rate : 35.83%
