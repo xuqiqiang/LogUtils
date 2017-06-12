@@ -11,7 +11,7 @@ import android.view.View;
 
 import com.dftc.logutils.LogUtils;
 import com.dftc.logutils.config.LogConfig;
-import com.dftc.logutils.utils.ObjParser;
+import com.dftc.logutils.parser.ObjParser;
 
 import java.io.File;
 import java.util.ArrayList;

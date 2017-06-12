@@ -1,8 +1,6 @@
-package com.dftc.logutils.utils;
+package com.dftc.logutils.parser;
 
 import android.util.Pair;
-
-import static com.dftc.logutils.utils.ObjParser.getIndent;
 
 /**
  * Created by xuqiqiang on 2017/6/2.
@@ -27,7 +25,7 @@ public final class ArrayParser {
     public static Pair<Pair<Integer, Integer>, String> arrayToObject(Object object, int level) {
         StringBuilder builder = new StringBuilder();
         int cross, vertical;
-        String indent = getIndent(level);
+        String indent = ObjParser.getIndent(level);
         if (object instanceof int[][]) {
             int[][] ints = (int[][]) object;
             cross = ints.length;
@@ -165,7 +163,7 @@ public final class ArrayParser {
             Object[] objects = (Object[]) object;
             length = objects.length;
             builder.append("\n");
-            String indent = getIndent(level);
+            String indent = ObjParser.getIndent(level);
             for (Object item : objects) {
                 builder.append(indent).append(ObjParser.objectToString(item, level + 1)).append(",\n");
             }
@@ -173,7 +171,7 @@ public final class ArrayParser {
         String str;
         if (isObjectArray)
             str = builder.replace(builder.length() - 2, builder.length(), "\n")
-                    .append(getIndent(level - 1)).append("]").toString();
+                    .append(ObjParser.getIndent(level - 1)).append("]").toString();
         else
             str = builder.replace(builder.length() - 2, builder.length(), "]").toString();
         return Pair.create(length, str);

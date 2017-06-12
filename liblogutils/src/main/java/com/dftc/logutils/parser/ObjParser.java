@@ -1,4 +1,4 @@
-package com.dftc.logutils.utils;
+package com.dftc.logutils.parser;
 
 import android.support.annotation.NonNull;
 import android.text.TextUtils;

@@ -10,12 +10,10 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.dftc.logutils.BuildConfig;
-import com.dftc.logutils.tools.CrashHandler;
-import com.dftc.logutils.config.LogConfig;
 import com.dftc.logutils.LogInterface;
 import com.dftc.logutils.adapter.LogAdapter;
-import com.dftc.logutils.adapter.NativeLogAdapter;
-import com.dftc.logutils.adapter.StressLogAdapter;
+import com.dftc.logutils.config.LogConfig;
+import com.dftc.logutils.tools.CrashHandler;
 import com.dftc.logutils.utils.FormatDate;
 import com.dftc.logutils.utils.Utils;
 
@@ -28,7 +26,6 @@ public class LogPrinter implements Printer {
 
     private static final int MAX_TMP_SIZE = 10000;
     private LogConfig config;
-    private LogAdapter mLogAdapter;
     private StringBuilder writeLogTmp;
     private LogInterface mService;
 
@@ -48,10 +45,9 @@ public class LogPrinter implements Printer {
     };
 
     public LogPrinter() {
-        this.config = LogConfig.newBuilder()
+        setConfig(LogConfig.newBuilder()
                 .debug(BuildConfig.DEBUG)
-                .build();
-        this.mLogAdapter = new NativeLogAdapter();
+                .build());
         this.writeLogTmp = new StringBuilder();
     }
 
@@ -79,13 +75,9 @@ public class LogPrinter implements Printer {
     @Override
     public void setConfig(LogConfig config) {
         this.config = config;
-        if (config.stress)
-            this.mLogAdapter = new StressLogAdapter();
-        if (config.context != null && !TextUtils.isEmpty(config.dirPath))
+        if (config.enableWrite())
             bindService();
-        if (config.reportCrash) {
-            CrashHandler.getInstance().initialize();
-        }
+        CrashHandler.getInstance().initialize(config.reportCrash);
     }
 
     @Override
@@ -102,33 +94,31 @@ public class LogPrinter implements Printer {
                                  StackTraceElement ste,
                                  String tag, Throwable throwable, String msg, Object... args) {
         if (config.level > priority ||
-                !config.debug && TextUtils.isEmpty(config.dirPath))
+                !config.debug && !config.enableWrite())
             return;
         if (TextUtils.isEmpty(tag)) {
             tag = config.tag;
         }
         String message = Utils.createMessage(throwable, msg, args);
-
-        if (ste == null)
-            ste = new Throwable().getStackTrace()[2];
-        String codeInfo = "(" + ste.getFileName() + ":"
-                + ste.getLineNumber() + ")";
-        if (config.debug) {
-            String log = message;
-            if (log.endsWith(" ") || log.endsWith("\n")) {
-                log += codeInfo;
-            } else
-                log += " " + codeInfo;
-            if (logAdapter != null)
-                logAdapter.log(priority, tag, log);
-            else
-                mLogAdapter.log(priority, tag, log);
+        String newTag = tag;
+        if (config.codeInfo) {
+            if (ste == null)
+                ste = new Throwable().getStackTrace()[2];
+            String codeInfo = "(" + ste.getFileName() + ":"
+                    + ste.getLineNumber() + ")";
+            newTag += codeInfo;
         }
-
-        if (!TextUtils.isEmpty(config.dirPath)) {
+        if (config.debug) {
+            if (logAdapter == null) {
+                logAdapter = config.logAdapter;
+            }
+            if (logAdapter.isLoggable(priority, tag))
+                logAdapter.log(priority, newTag, message);
+        }
+        if (config.enableWrite()) {
             String writeLog = FormatDate.getFormatTime()
-                    + " " + Utils.logLevel(priority) + "/" + tag
-                    + codeInfo + " : " + message + "\r\n";
+                    + " " + Utils.logLevel(priority) + "/" + newTag
+                    + " : " + message + "\r\n";
             startWrite(writeLog);
         }
     }
@@ -140,7 +130,7 @@ public class LogPrinter implements Printer {
             if (writeLogTmp.length() > MAX_TMP_SIZE) {
                 writeLogTmp.delete(0, writeLogTmp.length() - MAX_TMP_SIZE);
             }
-            if (config.context != null && !TextUtils.isEmpty(config.dirPath)) {
+            if (config.enableWrite()) {
                 bindService();
             }
             return;

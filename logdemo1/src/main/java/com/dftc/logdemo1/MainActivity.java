@@ -5,6 +5,7 @@ import android.os.Environment;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -46,9 +47,13 @@ public class MainActivity extends AppCompatActivity {
                 + "log1";
 
         LogUtils.initialize(LogConfig.newBuilder()
-                .debug(BuildConfig.DEBUG)
-                .enableWrite(this, dirPath)
-                .reportCrash(true)
+                .level(Log.VERBOSE) // Specify the level of the logs
+                .tag("TAG") // Specify the tag of the logs
+                .debug(BuildConfig.DEBUG) // Output to LogCat
+                .stress(true) // Highlight all the logs
+                .codeInfo(true) // Show the code information
+                .enableWrite(this, dirPath) // Output to files
+                .reportCrash(true) // Report crash logs
                 .build());
 
         // Cause crash
@@ -68,13 +73,16 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 while (true) {
 
-                    LogUtils.S.d("name:%s, version:%.1f", "LogUtils", 1.0f);
+                    LogUtils.d("hello %s", LogUtils.class.getSimpleName());
+
+                    LogUtils.i("version:%.1f", 1.0f);
+
+                    LogUtils.w("The best Log framework\non the earth");
 
                     LogUtils.json(TAG, "{\"firstName\": \"Brett\", \"lastName\": \"McLaughlin\"}");
+
                     LogUtils.xml(TAG,
                             "<?xml version=\"1.0\" encoding=\"UTF-8\"?><note><to>Tove</to><from>Jani</from><heading>Reminder</heading><body>Don't forget me this weekend!</body></note>");
-
-                    LogUtils.S.d("123\n45678980");
 
                     try {
                         "test".charAt(100);
@@ -115,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
                             new Shoes("A", "red"),
                             new Shoes("B", "blue"),
                     };
-                    LogUtils.S.object(shoes);
+                    LogUtils.object(shoes);
 
                     List<Shoes> shoesList = new ArrayList<>();
                     Collections.addAll(shoesList, shoes);
@@ -130,9 +138,9 @@ public class MainActivity extends AppCompatActivity {
                     shoesMap1.put(shoes[0], shoes[1]);
                     LogUtils.object(shoesMap1);
 
-                    LogUtils.S.object(new Person("Harry", "male"));
+                    LogUtils.object(new Person("Harry", "male"));
 
-                    LogUtils.S.cpuRate();
+                    LogUtils.cpuRate();
 
                     try {
                         Thread.sleep(5000);

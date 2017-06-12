@@ -5,6 +5,9 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.dftc.logutils.LogUtils;
+import com.dftc.logutils.adapter.LogAdapter;
+import com.dftc.logutils.adapter.NativeLogAdapter;
+import com.dftc.logutils.adapter.StressLogAdapter;
 import com.dftc.logutils.utils.FormatDate;
 import com.dftc.logutils.utils.Utils;
 
@@ -16,7 +19,8 @@ public class LogConfig {
     public boolean debug;
     public int level;
     public String tag;
-    public boolean stress;
+    public LogAdapter logAdapter;
+    public boolean codeInfo;
     public Context context;
     public String dirPath;
     public String defaultDate;
@@ -26,7 +30,14 @@ public class LogConfig {
         this.debug = builder.debug;
         this.level = builder.level;
         this.tag = builder.tag;
-        this.stress = builder.stress;
+        this.logAdapter = builder.logAdapter;
+        if (this.logAdapter == null) {
+            if (!builder.stress)
+                this.logAdapter = new NativeLogAdapter();
+            else
+                this.logAdapter = new StressLogAdapter();
+        }
+        this.codeInfo = builder.codeInfo;
         this.context = builder.context;
         this.dirPath = builder.dirPath;
         this.defaultDate = builder.defaultDate;
@@ -37,12 +48,18 @@ public class LogConfig {
         return new Builder();
     }
 
+    public boolean enableWrite() {
+        return context != null && !TextUtils.isEmpty(dirPath);
+    }
+
     public static class Builder {
 
         boolean debug;
         int level;
         String tag;
         boolean stress;
+        LogAdapter logAdapter;
+        boolean codeInfo;
         Context context;
         String dirPath;
         String defaultDate;
@@ -52,6 +69,8 @@ public class LogConfig {
             this.debug = true;
             this.level = Log.VERBOSE;
             this.tag = LogUtils.TAG;
+            this.stress = true;
+            this.codeInfo = true;
             this.defaultDate();
             this.reportCrash = true;
         }
@@ -71,8 +90,18 @@ public class LogConfig {
             return this;
         }
 
+        public Builder logAdapter(LogAdapter logAdapter) {
+            this.logAdapter = logAdapter;
+            return this;
+        }
+
         public Builder stress(boolean stress) {
             this.stress = stress;
+            return this;
+        }
+
+        public Builder codeInfo(boolean codeInfo) {
+            this.codeInfo = codeInfo;
             return this;
         }
 

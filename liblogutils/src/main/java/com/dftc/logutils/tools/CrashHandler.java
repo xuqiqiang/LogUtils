@@ -1,5 +1,7 @@
 package com.dftc.logutils.tools;
 
+import android.util.Log;
+
 import com.dftc.logutils.LogUtils;
 
 import java.io.PrintWriter;
@@ -22,10 +24,22 @@ public class CrashHandler implements UncaughtExceptionHandler {
         return INSTANCE;
     }
 
-    public void initialize() {
-        if (mDefaultHandler == null)
-            mDefaultHandler = Thread.getDefaultUncaughtExceptionHandler();
-        Thread.setDefaultUncaughtExceptionHandler(this);
+    public synchronized void initialize(boolean reportCrash) {
+        if (reportCrash) {
+            if (!Thread.getDefaultUncaughtExceptionHandler().equals(this)) {
+                Log.d("CrashHandler", "getDefaultUncaughtExceptionHandler()");
+                mDefaultHandler = Thread.getDefaultUncaughtExceptionHandler();
+                Thread.setDefaultUncaughtExceptionHandler(this);
+            }
+        } else {
+            if (mDefaultHandler != null) {
+                if (Thread.getDefaultUncaughtExceptionHandler().equals(this)) {
+                    Log.d("CrashHandler", "setDefaultUncaughtExceptionHandler(mDefaultHandler)");
+                    Thread.setDefaultUncaughtExceptionHandler(mDefaultHandler);
+                }
+
+            }
+        }
     }
 
     /**

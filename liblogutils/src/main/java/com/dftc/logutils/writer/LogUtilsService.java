@@ -52,8 +52,8 @@ public class LogUtilsService extends Service {
 
     private static final long WRITE_DELAY = 5000;
     private static final long MAX_FILE_SIZE = 1024 * 1024;
-    private static final int MAX_FILE_SUM = 20;
-    private static final int MAX_FILE_SUM_CACHE = 10;
+    private static final int MAX_FILE_SUM = 50;
+    private static final int MAX_FILE_SUM_CACHE = 30;
     private static final float MAX_CPU_RATE = 60.0f;
 
     private static final ExecutorService mExecutorService = Executors

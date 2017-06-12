@@ -1,7 +1,7 @@
 package com.dftc.logutils.printer;
 
-import com.dftc.logutils.config.LogConfig;
 import com.dftc.logutils.adapter.LogAdapter;
+import com.dftc.logutils.config.LogConfig;
 
 /**
  * Created by xuqiqiang on 2017/6/7.

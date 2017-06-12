@@ -7,9 +7,9 @@ import com.dftc.logutils.adapter.StressLogAdapter;
 import com.dftc.logutils.config.LogConfig;
 import com.dftc.logutils.printer.LogPrinter;
 import com.dftc.logutils.printer.Printer;
-import com.dftc.logutils.utils.ObjParser;
+import com.dftc.logutils.parser.ObjParser;
 import com.dftc.logutils.utils.Utils;
-import com.dftc.logutils.utils.XmlJsonParser;
+import com.dftc.logutils.parser.XmlJsonParser;
 
 /**
  * The best Log framework on the earth
